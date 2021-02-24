@@ -19,31 +19,32 @@
             <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
             <button class="btn btn-success" type="submit">Shrink</button>
         </form>
-        <table class="table table-striped table-responsive">
-            <thead>
-                <tr>
-                    <th>Full URL</th>
-                    <th>Short URL</th>
-                    <th>Clicks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% shortUrls.forEach(shortUrl=> { %>
+        <div class="container-fluid">
+            <table class="table table-striped table-responsive">
+                <thead>
                     <tr>
-                        <td><a href="<%= shortUrl.full %>">
-                                <%= shortUrl.full %>
-                            </a></td>
-                        <td><a href="<%= shortUrl.short %>">
-                                <%= shortUrl.short %>
-                            </a></td>
-                        <td>
-                            <%= shortUrl.clicks %>
-                        </td>
+                        <th class="col-md-6">Full URL</th>
+                        <th class="col-md-4">Short URL</th>
+                        <th class="col-md-2">Clicks</th>
                     </tr>
-                    <% }) %>
-            </tbody>
-        </table>
-
+                </thead>
+                <tbody>
+                    <% shortUrls.forEach(shortUrl=> { %>
+                        <tr>
+                            <td class="col-md-6"><a href="<%= shortUrl.full %>">
+                                    <%= shortUrl.full %>
+                                </a></td>
+                            <td class="col-md-4"><a href="<%= shortUrl.short %>">
+                                    <%= shortUrl.short %>
+                                </a></td>
+                            <td class="col-md-2">
+                                <%= shortUrl.clicks %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
